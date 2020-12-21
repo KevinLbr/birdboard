@@ -26,6 +26,11 @@ class ProjectsController extends Controller
         return redirect('/projects');
     }
 
+    public function create()
+    {
+        return view('projects.create');
+    }
+
     public function show(Project $project)
     {
         abort_if(auth()->user()->isNot($project->owner), 403);
